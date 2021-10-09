@@ -12,6 +12,7 @@ import racinggame.domain.RacingCarName;
 public class RacingGameCarNameConsole {
 
     private static final String RACING_CAR_NAME_DELIMITER = ",";
+    private static final int RACING_CAR_NAME_MAX_LENGTH = 5;
 
     private RacingGameCarNameConsole() {
     }
@@ -39,7 +40,7 @@ public class RacingGameCarNameConsole {
     }
 
     private static void racingCarNameLengthUnderFiveCheck(String racingCarName) {
-        if (racingCarName.length() > 5) {
+        if (racingCarName.length() > RACING_CAR_NAME_MAX_LENGTH) {
              throw new NoSuchElementException(ErrorMessage.RACING_CAR_NAME_LENGTH_OVER_FIVE.getMessage());
         }
     }
