@@ -1,0 +1,47 @@
+package racinggame.view;
+
+import java.util.NoSuchElementException;
+import nextstep.utils.Console;
+import racinggame.constant.ErrorMessage;
+import racinggame.domain.RacingGameMoveNumberTimes;
+
+public class RacingGameMoveNumberTimesConsole {
+
+    private final static String RACING_GAME_MOVE_NUMBER_TIMES_READ = "0";
+
+    private RacingGameMoveNumberTimesConsole() {
+    }
+
+    public static RacingGameMoveNumberTimes read() {
+        final String racingGameMoveNumberTimes = Console.readLine();
+        validate(racingGameMoveNumberTimes);
+        return new RacingGameMoveNumberTimes(Integer.parseInt(racingGameMoveNumberTimes));
+    }
+
+    private static void validate(String racingGameMoveNumberTimes) {
+        racingGameMoveNumberTimesIsBlankCheck(racingGameMoveNumberTimes);
+        racingGameMoveNumberTimesIsNumberCheck(racingGameMoveNumberTimes);
+        racingGameMoveNumberTimesIsZeroCheck(racingGameMoveNumberTimes);
+    }
+
+    private static void racingGameMoveNumberTimesIsZeroCheck(String racingGameMoveNumberTimes) {
+        if (RACING_GAME_MOVE_NUMBER_TIMES_READ.equals(racingGameMoveNumberTimes)) {
+            throw new NoSuchElementException(ErrorMessage.RACING_CAT_MOVE_NUMBER_TIMES_ZERO.getMessage());
+        }
+    }
+
+    private static void racingGameMoveNumberTimesIsNumberCheck(String racingGameMoveNumberTimes) {
+        try {
+            Integer.parseInt(racingGameMoveNumberTimes);
+        }catch (NumberFormatException e){
+            throw new NoSuchElementException(ErrorMessage.RACING_CAR_MOVE_NUMBER_TIMES_NOT_NUMBER.getMessage());
+        }
+    }
+
+    private static void racingGameMoveNumberTimesIsBlankCheck(String racingGameMoveNumberTimes) {
+        if (racingGameMoveNumberTimes.trim().isEmpty()) {
+            throw new NoSuchElementException(ErrorMessage.RACING_CAR_MOVE_NUMBER_TIMES_BLANK.getMessage());
+        }
+    }
+
+}
