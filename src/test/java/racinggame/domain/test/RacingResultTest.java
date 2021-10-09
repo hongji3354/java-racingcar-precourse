@@ -56,4 +56,23 @@ class RacingResultTest {
 
         assertThat(racingWinner.getWinners()).contains("rupee","jihun","pobi");
     }
+
+    @Test
+    void 모두_우승() {
+        final Car rupee = new Car("rupee");
+        final Car pororo = new Car("pororo");
+        final Car pobi = new Car("pobi");
+        final Car jihun = new Car("jihun");
+
+        rupee.forward();
+        pororo.forward();
+        pobi.forward();
+        jihun.forward();
+
+        final Cars cars = new Cars(Arrays.asList(rupee, pororo, pobi, jihun));
+
+        final RacingResult racingWinner = cars.getRacingWinner();
+
+        assertThat(racingWinner.getWinners()).contains("rupee","jihun","pobi","pororo");
+    }
 }
