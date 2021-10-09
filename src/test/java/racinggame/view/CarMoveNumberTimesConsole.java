@@ -3,19 +3,19 @@ package racinggame.view;
 import java.util.NoSuchElementException;
 import nextstep.utils.Console;
 import racinggame.constant.ErrorMessage;
-import racinggame.domain.RacingGameMoveNumberTimes;
+import racinggame.domain.CarMoveNumberTimes;
 
-public class RacingGameMoveNumberTimesConsole {
+public class CarMoveNumberTimesConsole {
 
-    private final static String RACING_GAME_MOVE_NUMBER_TIMES_READ = "0";
+    private static final String RACING_GAME_MOVE_NUMBER_TIMES_READ = "0";
 
-    private RacingGameMoveNumberTimesConsole() {
+    private CarMoveNumberTimesConsole() {
     }
 
-    public static RacingGameMoveNumberTimes read() {
+    public static CarMoveNumberTimes read() {
         final String racingGameMoveNumberTimes = Console.readLine();
         validate(racingGameMoveNumberTimes);
-        return new RacingGameMoveNumberTimes(Integer.parseInt(racingGameMoveNumberTimes));
+        return new CarMoveNumberTimes(Integer.parseInt(racingGameMoveNumberTimes));
     }
 
     private static void validate(String racingGameMoveNumberTimes) {

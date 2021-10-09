@@ -1,10 +1,10 @@
 package racinggame.domain;
 
-public class RacingGameMoveNumberTimes {
+public class CarMoveNumberTimes {
 
     private int moveNumberTimes;
 
-    public RacingGameMoveNumberTimes(int moveNumberTimes) {
+    public CarMoveNumberTimes(int moveNumberTimes) {
         this.moveNumberTimes = moveNumberTimes;
     }
 
