@@ -16,7 +16,7 @@ public class Cars implements Comparator<Car> {
         return cars;
     }
 
-    public void carForward() {
+    public void forward() {
         for(Car car : this.cars) {
             if (CarForward.forward()) {
                 car.forward();
@@ -48,10 +48,10 @@ public class Cars implements Comparator<Car> {
     }
 
     public List<Car> forwardDescendingOrderCars() {
-        final List<Car> cars = new ArrayList<>(new ArrayList<>(this.cars));
-        cars.sort(this::compare);
+        final List<Car> copyCars = new ArrayList<>(new ArrayList<>(this.cars));
+        copyCars.sort(this::compare);
 
-        return cars;
+        return copyCars;
     }
 
     @Override

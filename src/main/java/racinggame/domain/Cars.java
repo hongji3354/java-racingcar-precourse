@@ -16,7 +16,7 @@ public class Cars implements Comparator<Car> {
         return cars;
     }
 
-    public void carForward() {
+    public void forward() {
         for(Car car : this.cars) {
             if (CarForward.forward()) {
                 car.forward();
