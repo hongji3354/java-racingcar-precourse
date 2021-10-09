@@ -9,7 +9,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.NoSuchElementException;
 import org.junit.jupiter.api.Test;
 import racinggame.constant.ErrorMessage;
-import racinggame.domain.RacingCarName;
+import racinggame.domain.CarNames;
 import racinggame.view.CarNameConsole;
 
 class CarNameConsoleTest {
@@ -22,8 +22,8 @@ class CarNameConsoleTest {
     @Test
     void 구분자() {
         consoleRead("포비,뽀로로,크롱");
-        final RacingCarName racingCarName = CarNameConsole.read();
-        assertThat(racingCarName.getCarNames()).contains("포비","뽀로로","크롱");
+        final CarNames carNames = CarNameConsole.read();
+        assertThat(carNames.getCarNames()).contains("포비","뽀로로","크롱");
     }
 
     @Test

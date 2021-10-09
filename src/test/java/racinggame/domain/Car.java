@@ -1,11 +1,11 @@
 package racinggame.domain;
 
-public class RacingCar {
+public class Car {
 
     private String name;
     private int position;
 
-    public RacingCar(String name) {
+    public Car(String name) {
         this.name = name;
     }
 }

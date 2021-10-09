@@ -7,7 +7,7 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import nextstep.utils.Console;
 import racinggame.constant.ErrorMessage;
-import racinggame.domain.RacingCarName;
+import racinggame.domain.CarNames;
 
 public class CarNameConsole {
 
@@ -17,11 +17,11 @@ public class CarNameConsole {
     private CarNameConsole() {
     }
 
-    public static RacingCarName read() {
+    public static CarNames read() {
         final String racingCarName = Console.readLine();
         final List<String> racingCarNames = Arrays.asList(racingCarName.split(RACING_CAR_NAME_DELIMITER));
         validate(racingCarNames);
-        return new RacingCarName(racingCarNames);
+        return new CarNames(racingCarNames);
     }
 
     private static void validate(List<String> racingCarNames) {

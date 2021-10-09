@@ -2,11 +2,11 @@ package racinggame.domain;
 
 import java.util.List;
 
-public class RacingCarName {
+public class CarNames {
 
     private List<String> carNames;
 
-    public RacingCarName(List<String> carNames) {
+    public CarNames(List<String> carNames) {
         this.carNames = carNames;
     }
 
