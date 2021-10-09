@@ -4,13 +4,21 @@ import java.util.List;
 
 public class Cars {
 
-    private List<Car> racingCars;
+    private List<Car> cars;
 
-    public Cars(List<Car> racingCars) {
-        this.racingCars = racingCars;
+    public Cars(List<Car> cars) {
+        this.cars = cars;
     }
 
     public List<Car> getCars() {
-        return racingCars;
+        return cars;
+    }
+
+    public void carForward() {
+        for(Car car : this.cars) {
+            if (CarForward.forward()) {
+                car.forward();
+            }
+        }
     }
 }

@@ -8,4 +8,16 @@ public class Car {
     public Car(String name) {
         this.name = name;
     }
+
+    public void forward() {
+        this.position++;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getPosition() {
+        return position;
+    }
 }

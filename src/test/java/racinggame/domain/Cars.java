@@ -13,4 +13,12 @@ public class Cars {
     public List<Car> getCars() {
         return cars;
     }
+
+    public void carForward() {
+        for(Car car : this.cars) {
+            if (CarForward.forward()) {
+                car.forward();
+            }
+        }
+    }
 }
