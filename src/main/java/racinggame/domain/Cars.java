@@ -27,24 +27,25 @@ public class Cars implements Comparator<Car> {
     public RacingResult getRacingWinner() {
         final List<Car> forwardDescendingOrderCars = forwardDescendingOrderCars();
         List<String> winners = new ArrayList<>();
+        final Car firstWinner = forwardDescendingOrderCars.get(0);
 
-        int index = 1;
-        boolean isWinner = true;
-        while (isWinner) {
-            final Car car = forwardDescendingOrderCars.get(index-1);
-            final Car nextCar = forwardDescendingOrderCars.get(index);
-            winners.add(car.getName());
-
-            if (!isSamePosition(car, nextCar)) {
-                isWinner = false;
-            }
-            index++;
+        winners.add(firstWinner.getName());
+        for (int i=1; i<forwardDescendingOrderCars.size(); i++) {
+            final Car winnerNextCar = forwardDescendingOrderCars.get(i);
+            winnerSeveralPeopleCheck(winners, firstWinner, winnerNextCar);
         }
+
         return new RacingResult(winners);
     }
 
-    private boolean isSamePosition(Car car, Car nextCar) {
-        return car.getPosition() == nextCar.getPosition();
+    private void winnerSeveralPeopleCheck(List<String> winners, Car firstWinner, Car car) {
+        if (isSamePosition(firstWinner, car)) {
+            winners.add(car.getName());
+        }
+    }
+
+    private boolean isSamePosition(Car firstWinner, Car car) {
+        return firstWinner.getPosition() == car.getPosition();
     }
 
     public List<Car> forwardDescendingOrderCars() {
