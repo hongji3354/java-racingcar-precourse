@@ -9,21 +9,21 @@ import nextstep.utils.Console;
 import racinggame.constant.ErrorMessage;
 import racinggame.domain.RacingCarName;
 
-public class RacingGameConsole {
+public class RacingGameCarNameConsole {
 
     private static final String RACING_CAR_NAME_DELIMITER = ",";
 
-    private RacingGameConsole() {
+    private RacingGameCarNameConsole() {
     }
 
-    public static RacingCarName racingCarNameRead() {
+    public static RacingCarName read() {
         final String racingCarName = Console.readLine();
         final List<String> racingCarNames = Arrays.asList(racingCarName.split(RACING_CAR_NAME_DELIMITER));
-        racingCarNameValidate(racingCarNames);
+        validate(racingCarNames);
         return new RacingCarName(racingCarNames);
     }
 
-    private static void racingCarNameValidate(List<String> racingCarNames) {
+    private static void validate(List<String> racingCarNames) {
         for (String racingCarName : racingCarNames) {
             racingCarNameIsBlankCheck(racingCarName);
             racingCarNameLengthUnderFiveCheck(racingCarName);
@@ -40,7 +40,7 @@ public class RacingGameConsole {
 
     private static void racingCarNameLengthUnderFiveCheck(String racingCarName) {
         if (racingCarName.length() > 5) {
-            throw new NoSuchElementException(ErrorMessage.RACING_CAR_NAME_LENGTH_OVER_FIVE.getMessage());
+             throw new NoSuchElementException(ErrorMessage.RACING_CAR_NAME_LENGTH_OVER_FIVE.getMessage());
         }
     }
 
