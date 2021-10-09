@@ -9,12 +9,12 @@ import nextstep.utils.Console;
 import racinggame.constant.ErrorMessage;
 import racinggame.domain.RacingCarName;
 
-public class RacingGameCarNameConsole {
+public class CarNameConsole {
 
     private static final String RACING_CAR_NAME_DELIMITER = ",";
     private static final int RACING_CAR_NAME_MAX_LENGTH = 5;
 
-    private RacingGameCarNameConsole() {
+    private CarNameConsole() {
     }
 
     public static RacingCarName read() {
