@@ -36,18 +36,21 @@ public class CarNameConsole {
     private static void racingCarNameDuplicateCheck(List<String> racingCarNames) {
         final Set<String> nonDuplicateRacingCarNames = new HashSet<>(racingCarNames);
         if (nonDuplicateRacingCarNames.size() != racingCarNames.size()) {
+            System.out.println(ErrorMessage.RACING_CAR_NAME_DUPLICATE.getMessage());
             throw new NoSuchElementException(ErrorMessage.RACING_CAR_NAME_DUPLICATE.getMessage());
         }
     }
 
     private static void racingCarNameLengthUnderFiveCheck(String racingCarName) {
         if (racingCarName.length() > RACING_CAR_NAME_MAX_LENGTH) {
-             throw new NoSuchElementException(ErrorMessage.RACING_CAR_NAME_LENGTH_OVER_FIVE.getMessage());
+            System.out.println(ErrorMessage.RACING_CAR_NAME_LENGTH_OVER_FIVE.getMessage());
+            throw new NoSuchElementException(ErrorMessage.RACING_CAR_NAME_LENGTH_OVER_FIVE.getMessage());
         }
     }
 
     private static void racingCarNameIsBlankCheck(String racingCarName) {
         if (racingCarName.trim().isEmpty()) {
+            System.out.println(ErrorMessage.RACING_CAR_NAME_LENGTH_UNDER_ONE.getMessage());
             throw new NoSuchElementException(ErrorMessage.RACING_CAR_NAME_LENGTH_UNDER_ONE.getMessage());
         }
     }
