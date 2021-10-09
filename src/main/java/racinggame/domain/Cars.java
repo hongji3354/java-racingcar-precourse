@@ -48,7 +48,7 @@ public class Cars implements Comparator<Car> {
         return firstWinner.getPosition() == car.getPosition();
     }
 
-    public List<Car> forwardDescendingOrderCars() {
+    private List<Car> forwardDescendingOrderCars() {
         final List<Car> copyCars = new ArrayList<>(new ArrayList<>(this.cars));
         copyCars.sort(this::compare);
 
