@@ -1,6 +1,6 @@
 package racinggame.domain;
 
-import racinggame.view.RacingIntermediateResultConsole;
+import racinggame.view.RacingMoveNumberTimesResultConsole;
 
 public class CarMoveNumberTimes {
 
@@ -14,7 +14,7 @@ public class CarMoveNumberTimes {
         System.out.println("실행 결과");
         for (int i=0; i<this.moveNumberTimes; i++) {
             cars.move();
-            RacingIntermediateResultConsole.write(CreateRacingIntermediateResult.racingIntermediateResult(cars));
+            RacingMoveNumberTimesResultConsole.write(CreateRacingIntermediateResult.racingIntermediateResult(cars));
         }
     }
 }

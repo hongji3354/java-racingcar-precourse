@@ -3,9 +3,9 @@ package racinggame.view;
 import racinggame.domain.RacingIntermediateResult;
 import racinggame.domain.RacingIntermediateResults;
 
-public class RacingIntermediateResultConsole {
+public class RacingMoveNumberTimesResultConsole {
 
-    private RacingIntermediateResultConsole() {
+    private RacingMoveNumberTimesResultConsole() {
     }
 
     public static void write(RacingIntermediateResults results) {
