@@ -15,6 +15,7 @@ public class CarMoveNumberTimesConsole {
     public static CarMoveNumberTimes read() {
         System.out.println("시도할 회수는 몆회인가요?");
         final String racingGameMoveNumberTimes = Console.readLine();
+        System.out.println();
         validate(racingGameMoveNumberTimes);
         return new CarMoveNumberTimes(Integer.parseInt(racingGameMoveNumberTimes));
     }
