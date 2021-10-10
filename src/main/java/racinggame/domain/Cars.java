@@ -16,11 +16,15 @@ public class Cars implements Comparator<Car> {
         return cars;
     }
 
-    public void forward() {
+    public void move() {
         for(Car car : this.cars) {
-            if (CarForward.forward()) {
-                car.forward();
-            }
+            isForward(car);
+        }
+    }
+
+    private void isForward(Car car) {
+        if (CarForward.forward()) {
+            car.forward();
         }
     }
 

@@ -22,7 +22,7 @@ class CarTest {
 
             final Cars cars = new Cars(Arrays.asList(new Car("뽀로로")));
 
-            cars.forward();
+            cars.move();
 
             assertThat(cars.getCars().get(0).getPosition()).isEqualTo(position);
         }

@@ -21,7 +21,7 @@ class RacingIntermediateResultTest {
                 .thenReturn(true);
 
             final Cars cars = new Cars(Arrays.asList(new Car("rupee")));
-            cars.forward();
+            cars.move();
 
             final RacingIntermediateResults racingIntermediateResults = CreateRacingIntermediateResult.racingIntermediateResult(cars);
 
